@@ -1,0 +1,515 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Alejandro Ramos — Data Analyst</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500&family=Space+Grotesk:wght@500;600;700&display=swap"
+          rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<!-- ============ HERO ============ -->
+<section class="hero-shell" id="home">
+    <div class="hero-bg"></div>
+
+    <nav class="hero-nav">
+        <a href="#home" class="hero-logo">
+            <img src="images/avatar.png" alt="Alejandro Ramos" class="hero-logo-avatar">
+            <span class="hero-logo-text">Alejandro<b> Ramos</b></span>
+        </a>
+        <div class="hero-links">
+            <a href="#p1">Projects</a>
+            <a href="#about">About</a>
+            <a href="#contact">Contact</a>
+        </div>
+        <button type="button" class="nav-toggle" id="navToggle"
+                aria-expanded="false" aria-controls="mobileNav"
+                aria-label="Toggle navigation menu">
+            <span class="nav-toggle-bar"></span>
+            <span class="nav-toggle-bar"></span>
+            <span class="nav-toggle-bar"></span>
+        </button>
+        <div class="mobile-nav" id="mobileNav" aria-hidden="true">
+            <a href="#p1">Projects</a>
+            <a href="#about">About</a>
+            <a href="#contact">Contact</a>
+        </div>
+    </nav>
+
+    <div class="hero-content">
+        <h1 class="hero-name"><span class="a">D</span>ata <span
+                class="a">A</span>nalyst</h1>
+        <div class="hero-role"><span id="heroRoleText">Data Analyst</span><span class="cursor">&nbsp;</span>
+        </div>
+        <p class="hero-tag">I turn messy data into decisions people actually
+            make</p>
+        <div class="hero-cta">
+            <a href="#p1" class="btn btn-hero">View projects</a>
+            <a href="#contact" class="btn btn-hero-ghost">Contact ↗</a>
+        </div>
+    </div>
+
+    <div class="scroll-hint">Scroll ↓</div>
+</section>
+<div class="bridge"></div>
+
+<!-- ============ PROJECT 1 —  ============ -->
+<section class="project" id="p1">
+    <div class="wrap reveal">
+        <p class="proj-index">Unforgettable Experience Travel</p>
+        <h2 class="proj-title">Deposit Policy Impact Analysis</h2>
+        <p class="proj-tags">Data pipeline & validation <span> · </span> Natural experiment design
+            <span>·</span> Diagnostic analysis</p>
+
+        <div class="proj-top">
+            <div>
+                <div class="block"><h4>Context</h4>
+                    <p>In August 2025, a small Guadalajara travel agency raised its required booking
+                        deposit from <b>20% to 50% non-refundable</b>, aiming to stop customers from
+                        cancelling.</p>
+                </div>
+                <div class="block"><h4>The question</h4>
+                    <p>Did the deposit increase actually reduce cancellations, or did it quietly
+                        drive away the agency's most valuable customers?
+                    </p>
+                </div>
+                <div class="block"><h4>Approach</h4>
+                    <ul>
+                        <li>Cleaned 388 real bookings from a genuinely messy source (6 date
+                            formats, 5 money formats, duplicate records, and impossible values)
+                            using a <b>PostgreSQL pipeline</b>
+                        </li>
+                        <li>Built a <b>Python validation layer</b> to quantify cleaning accuracy and
+                            profile remaining data gaps, rather than assume the clean data was
+                            correct
+                        </li>
+                        <li>Framed the policy change as a <b>natural experiment</b> (pre/post
+                            comparison),
+                            explicitly testing and reporting its limits rather than overclaiming
+                            causality
+                        </li>
+                        <li>Designed a two-page interactive <b>Power BI dashboard</b>, deliberately
+                            choosing native visuals, custom HTML/DAX, or Deneb/Vega-Lite per chart
+                            based on what each one actually required
+                        </li>
+                    </ul>
+                </div>
+                <div class="block"><h4>Outcome</h4>
+                    <ul>
+                        <li>Raising the deposit worked on the symptom and created a new problem
+                        </li>
+                        <li>Cancellations fell <b>57% (19.4% → 8.3%)</b>, and refunds from cancelled
+                            bookings dropped to zero after the change
+                        </li>
+                        <li>But the same 50%-upfront rule suppressed the agency's highest-margin
+                            segment: average monthly custom-trip bookings fell <b>from 12.4 to 9.0
+                                (−27%)</b>, even though these trips (weddings, quinceañeras,
+                            honeymoons)
+                            are worth <b>2.1×</b> a group trip on average
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="dash">
+                <!-- POWER BI: no live embed (licensing wall). Screenshot below, .pbix linked in repo. -->
+                <img class="dash-img" src="images/ue-dashboard-page2.png"
+                     alt="Power BI dashboard — Analysis page, showing the monthly cancellation breakdown, booking mix, lead-time risk chart, and channel audit table">
+                <p class="proj-tags dash-caption">Power BI Dashboard Screenshot *
+                    Interactive file available below</p>
+                <div class="dash-foot">
+                    <div class="dash-stack"><span class="chip">Power BI</span><span
+                            class="chip">SQL</span><span class="chip">Python</span></div>
+                </div>
+                <div class="dash-actions">
+                    <a href="https://raw.githubusercontent.com/oruizramos/ue-deposit-cancelation-policy-data-analysis/main/uet-dashboard.pbix"
+                       download target="_blank" rel="noopener noreferrer" class="btn btn-primary">Download .pbix
+                        ↓</a>
+                    <a href="https://github.com/oruizramos/ue-deposit-cancelation-policy-data-analysis"
+                       target="_blank" rel="noopener noreferrer" class="btn btn-ghost">View on GitHub ↗</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="findings">
+            <p class="findings-head">Key findings</p>
+            <div class="find-grid">
+                <div class="find"><p class="find-name">1. Cancellations Fell 57% Overnight</p>
+                    <div class="find-chart">
+                        <img src="images/ue-finding1.png"
+                             alt="Chart showing cancellation rate dropping after the deposit policy change">
+                    </div>
+                    <p>Raising the deposit from 20% to 50% cut the cancellation rate from
+                        <b>19.4% to 8.3%</b> almost immediately. On paper, the policy did exactly
+                        what it was designed to do.</p>
+                </div>
+                <div class="find"><p class="find-name">2. The Real Leak Wasn't Discounts</p>
+                    <div class="find-chart">
+                        <img src="images/ue-finding2.png"
+                             alt="Chart comparing revenue lost to cancellations versus last-minute discounts">
+                    </div>
+                    <p>Of the <b>$73.4M</b> booked, <b>$12.8M</b> was lost to cancellations
+                        (<b>12x more</b> than was lost to last-minute discounts). The obvious cost
+                        was never the real problem.</p>
+                </div>
+                <div class="find"><p class="find-name">3. The Best Customers Were Pushed Away</p>
+                    <div class="find-chart">
+                        <img src="images/ue-finding3.png"
+                             alt="Chart showing custom trip bookings declining after the policy change">
+                    </div>
+                    <p>Custom trips fell <b>27% a month</b> after
+                        the change, even though they're worth <b>2.1×</b> a group booking. The fix
+                        for one problem quietly created another.</p>
+                </div>
+            </div>
+
+            <div class="recommendations">
+                <h4>Recommendations</h4>
+                <ul>
+                    <li><b>1. Keep the 50% deposit for group trips.</b><br>
+                        The policy works here without suppressing volume.
+                    </li>
+                    <li><b>2. Flexible deposit for custom trips, by trip type.</b><br>
+                        Offer <b>20–30% upfront plus a structured payment plan</b> (e.g. a second
+                        installment at 90 days before departure) specifically for weddings, XV años,
+                        and honeymoons — regardless of how far ahead they're booked. This recovers
+                        the premium customers the flat 50% rule deters, while the staged second
+                        payment preserves commitment.
+                    </li>
+                    <li><b>3. Add a checkpoint for long-lead bookings, by timing.</b><br>
+                        Separately, for <b>any</b> trip type booked more than 180 days out, require
+                        a second deposit at the 90-day mark. This targets the highest-cancellation
+                        cohort (<b>32%</b>) based on how early it was booked, not what kind of trip
+                        it is.
+                    </li>
+                    <li><b>4. Protect channel quality.</b><br>
+                        Web bookings cancel at roughly half the rate of travel-fair leads. Directing
+                        more demand to the site, and treating travel-fair leads with more caution
+                        (deposits, follow-up), improves the quality of the overall booking
+                        portfolio.
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ============ PROJECT 2 ============ -->
+<section class="project" id="p2">
+    <div class="wrap reveal">
+        <p class="proj-index">F2P LiveOps</p>
+        <h2 class="proj-title">Game Health Check</h2>
+        <p class="proj-tags">Acquisition Analysis<span>·</span> Retention Analysis
+            <span>·</span> Monetization Analysis</p>
+
+        <div class="proj-top">
+            <div>
+                <div class="block"><h4>Context</h4>
+                    <p>A free-to-play mobile game needed a health check across acquisition,
+                        retention, and monetization, but the underlying data (players, sessions,
+                        purchases, live events, marketing spend) arrived messy: inconsistent date
+                        formats, duplicate and test accounts, mixed currencies, and unlabeled
+                        quality issues, mirroring the real state of LiveOps telemetry. (Synthetic
+                        dataset, deliberately built with these conditions as <b>real F2P transaction
+                            data isn't publicly available.</b>)</p></div>
+                <div class="block"><h4>The question</h4>
+                    <p><b>Where</b> in the player lifecycle (acquisition, retention, or
+                        monetization) <b>is
+                            the game losing players or money</b>, and what should be fixed first?
+                    </p></div>
+                <div class="block"><h4>Approach</h4>
+                    <ul>
+                        <li>Audited and cleaned five raw data sources in PostgreSQL, resolving
+                            <strong>12
+                                distinct data-quality issues</strong> (inconsistent formats,
+                            duplicates, test
+                            records, currency mismatches)
+                        </li>
+                        <li>Wrote SQL to answer five business questions: <b>churn drivers, marketing
+                            ROAS, revenue concentration, refund leakage, and install-reporting
+                            accuracy</b>
+                        </li>
+                        <li>Built a 3-section Tableau dashboard (Acquisition → Retention →
+                            Monetization) with KPI callouts and a consistent color system flagging
+                            problem areas
+                        </li>
+                    </ul>
+                </div>
+                <div class="block"><h4>Outcome</h4>
+                    <ul>
+                        <li>Isolated a single live event responsible for <strong>nearly
+                            double</strong> the normal
+                            churn rate
+                        </li>
+                        <li>Identified one marketing channel returning <strong>€0.17 per €1
+                            spent</strong>, while
+                            others broke even or profited
+                        </li>
+                        <li>Quantified a specific, recoverable revenue leak tied to one product</li>
+                        <li>Quantified how concentrated the player base is: <b>the top 10% of
+                            payers drive nearly a third of all revenue</b>
+                        </li>
+                        <li>Uncovered a structural install-attribution gap affecting every paid
+                            channel, not just one bad platform
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="dash">
+                <div class="dash-bar"><span class="dot"></span><span
+                        class="dot"></span><span class="dot"></span><span
+                        class="dash-label">tableau · live</span></div>
+                <div class="dash-embed-wrap">
+                    <iframe class="dash-embed"
+                            src="https://public.tableau.com/views/F2PLiveOpsHealthCheckProject/DashboardAcquisition?:embed=y&:showVizHome=no"
+                            allowfullscreen></iframe>
+                </div>
+                <div class="dash-foot">
+                    <div class="dash-stack"><span class="chip">PostgreSQL</span><span
+                            class="chip">SQL</span><span class="chip">Tableau</span></div>
+                </div>
+                <div class="dash-actions">
+                    <a href="https://public.tableau.com/app/profile/alejandro.ramos5015/viz/F2PLiveOpsHealthCheckProject/DashboardAcquisition"
+                       target="_blank" rel="noopener noreferrer" class="btn btn-primary">Open in Tableau Public ↗</a>
+                    <a href="https://github.com/oruizramos/f2p-liveops-data-analytics"
+                       target="_blank" rel="noopener noreferrer" class="btn btn-ghost">View on GitHub ↗</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="findings">
+            <p class="findings-head">Key findings</p>
+            <div class="find-grid">
+                <div class="find"><p class="find-name">Event-driven churn</p>
+                    <div class="find-chart">
+                        <img src="images/f2p-churn.png"
+                             alt="Bar chart of churn rate by live event, with Forge Frenzy at 57.9% highlighted as roughly double any other event">
+                    </div>
+                    <p><strong>Forge Frenzy churned 57.9%</strong> of active players: roughly 2x
+                        any other event. Pointing to a difficulty spike specific to this event,
+                        not competitive events in general.</p></div>
+                <div class="find"><p class="find-name">Marketing efficiency</p>
+                    <div class="find-chart">
+                        <img src="images/f2p-roas.png"
+                             alt="Bar chart of return on ad spend by channel with a break-even line; influencer marketing at €0.17 per €1 spent is the only channel below break-even">
+                    </div>
+                    <p>Influencer marketing returned <strong>€0.17 per €1 spent</strong>, the only
+                        channel below
+                        break-even; cross_promo returned <strong>€2.73</strong>.</p>
+                </div>
+                <div class="find"><p class="find-name">Revenue concentration</p>
+                    <div class="find-chart">
+                        <img src="images/f2p-revenue.png"
+                             alt="Bar chart of revenue by offer type, showing event bundles and gems_mega together driving 52% of total revenue">
+                    </div>
+                    <p>Two offer types drive <strong>52% of revenue</strong>, and the top 30% of
+                        paying players
+                        account for two-thirds of it, with only <strong>13.2%</strong> of players
+                        converting to
+                        payers at all.</p>
+                </div>
+                <div class="find"><p class="find-name">Payer concentration (by decile)</p>
+                    <div class="find-chart">
+                        <img src="images/f2p-whale-decile-table.png"
+                             alt="Table of revenue share by payer decile, showing the top decile contributing 32.7% of total revenue">
+                    </div>
+                    <p>The top decile of paying players alone contributes <strong>32.7%</strong> of
+                        total revenue;
+                        by the top half of payers, that reaches <strong>83.5%</strong>, a steep
+                        whale curve
+                        typical of F2P economies, and a signal for where retention effort pays back
+                        the most.</p>
+                </div>
+                <div class="find"><p class="find-name">Revenue leakage</p>
+                    <div class="find-chart">
+                        <img src="images/f2p-leakage.png"
+                             alt="Stacked bar chart of revenue leakage by offer, showing gems_mega refunds at 14.7% versus 0% for every other offer">
+                    </div>
+                    <p><strong>gems_mega refunds ran at 14.7%</strong> versus 0% for every other
+                        offer, <strong>€1,300</strong> in
+                        recoverable revenue tied to a single product.</p>
+                </div>
+                <div class="find"><p class="find-name">Attribution accuracy</p>
+                    <div class="find-chart">
+                        <img src="images/f2p-attribution-sql.png"
+                             alt="Screenshot of the SQL query comparing reported versus actual installs by channel — the source of the attribution-gap finding">
+                    </div>
+                    <p>Every paid acquisition channel over-reported installs by
+                        <strong>10–13.5%</strong> versus
+                        actual, a structural attribution gap, not one bad platform. Shown here is
+                        the query
+                        that surfaces it: a join between platform-reported install logs and verified
+                        actual
+                        installs, aggregated by channel.</p></div>
+            </div>
+        </div>
+
+        <div class="recommendations">
+            <h4>Recommendations</h4>
+            <ul>
+                <li><strong>Rebalance Forge Frenzy's difficulty curve</strong> before its next run.
+                    The churn spike
+                    is event-specific, not category-wide
+                </li>
+                <li><strong>Reallocate influencer budget toward cross_promo and google_uac</strong>;
+                    track ROAS by
+                    channel monthly
+                </li>
+                <li><strong>Protect the top-30%-payer segment</strong> with retention/VIP treatment,
+                    since it drives
+                    <strong>two-thirds of revenue</strong>, losing a handful of these players costs
+                    more
+                    than losing
+                    hundreds of non-payers
+                </li>
+                <li><strong>Investigate the gems_mega purchase flow</strong> specifically (not gems
+                    generally) to
+                    recover the €1,300 in refund leakage
+                </li>
+                <li><strong>Reconcile reported-vs-actual installs with ad partners</strong> before
+                    setting CAC
+                    targets, so acquisition cost isn't calculated on inflated numbers
+                </li>
+            </ul>
+        </div>
+    </div>
+</section>
+
+<!-- ============ ABOUT ============ -->
+<section class="about" id="about">
+    <div class="wrap reveal">
+        <p class="eyebrow">Who am I?</p>
+        <h2>Look. I'm a cleaner. I feel no remorse when I see nulls and duplicates. <br>
+            To me, it's merely cold, unstructured data</h2>
+        <div class="about-grid">
+            <div>
+                <div class="about-photo">
+                    <div class="about-photo-placeholder">
+                        <img src="images/profile-picture.png"
+                             alt="Alejandro's black and white picture">
+                    </div>
+                </div>
+            </div>
+            <div>
+                <div class="about-location">
+                    <svg width="17" height="17" viewBox="0 0 24 24" fill="none"
+                         stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                         stroke-linejoin="round" aria-hidden="true">
+                        <path d="M12 21s-7-6.1-7-11.5a7 7 0 0 1 14 0C19 14.9 12 21 12 21z"/>
+                        <circle cx="12" cy="9.5" r="2.5"/>
+                    </svg>
+                    <span id="about-location" class="about-location-text">Cologne, Germany</span>
+                    <span class="chip about-lang-chip">EN · ES · DE</span>
+                </div>
+                <p>I've spent a career translating one thing into another: Spanish into English,
+                    game narrative systems into QA reports, art/mockups into functioning
+                    websites, and spreadsheets into decisions. Data analysis turned out to
+                    be the same skill with better tools; SQL to ask the question properly, Python
+                    to make sure the answer holds up (there's still a small thrill every time it
+                    does!), and a dashboard built so the answer is clear the first time someone
+                    opens
+                    it. </p>
+                <p>Outside of work, I apply the same instinct to gaming (Yes, I DO create an
+                    alarming number of spreadsheets for playing games too...)</p>
+                <div class="stack-icons-section">
+                    <p class="stack-head">Tools &amp; stack</p>
+                    <div class="stack-icons">
+                        <!-- sql.svg -->
+                        <div class="stack-item">
+                            <div class="stack-icon"><img src="icons/icon-sql-server.png" alt="SQL">
+                            </div>
+                            <span class="stack-label">SQL</span>
+                        </div>
+                        <!-- python.svg -->
+                        <div class="stack-item">
+                            <div class="stack-icon"><img src="icons/python.png" alt="Python"></div>
+                            <span class="stack-label">Python</span>
+                        </div>
+                        <!-- js.svg -->
+                        <div class="stack-item">
+                            <div class="stack-icon"><img src="icons/java-script.png" alt="JavaScript">
+                            </div>
+                            <span class="stack-label">Javascript</span>
+                        </div>
+                        <!-- tableau.svg -->
+                        <div class="stack-item">
+                            <div class="stack-icon"><img src="icons/tableau-svgrepo-com.svg"
+                                                         alt="Tableau"></div>
+                            <span class="stack-label">Tableau</span>
+                        </div>
+                        <!-- powerbi.svg -->
+                        <div class="stack-item">
+                            <div class="stack-icon"><img src="icons/powerbi-svgrepo-com.svg"
+                                                         alt="Power BI"></div>
+                            <span class="stack-label">Power BI</span>
+                        </div>
+                        <!-- excel.svg -->
+                        <div class="stack-item">
+                            <div class="stack-icon"><img src="icons/excel.png" alt="Excel"></div>
+                            <span class="stack-label">Excel</span>
+                        </div>
+                        <!-- git.svg -->
+                        <div class="stack-item">
+                            <div class="stack-icon"><img src="icons/git.png" alt="Git"></div>
+                            <span class="stack-label">Git</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ============ CONTACT ============ -->
+<section class="contact" id="contact">
+    <div class="wrap reveal">
+        <p class="eyebrow">Connect with me</p>
+        <h2>Let's talk data</h2>
+        <p>A dataset is a crime scene. And I just do the paperwork</p>
+        <div class="contact-links">
+            <a href="mailto:omarruizramos@gmail.com" class="btn btn-primary">
+                <svg class="btn-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                     stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                    <rect x="3" y="5" width="18" height="14" rx="2"/>
+                    <path d="M3 7l9 6 9-6"/>
+                </svg>
+                Email me</a>
+            <a href="https://www.linkedin.com/in/omarruizramos" target="_blank" rel="noopener noreferrer" class="btn btn-ghost">
+                <svg class="btn-icon" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                    <path d="M6.94 5a2 2 0 1 1-4-.02 2 2 0 0 1 4 .02zM3.5 8.75h3.9V21H3.5V8.75zm6.13 0h3.74v1.68h.05c.52-.98 1.8-2.02 3.7-2.02 3.96 0 4.69 2.6 4.69 6v7.6h-3.9v-6.74c0-1.6-.03-3.67-2.23-3.67-2.24 0-2.58 1.75-2.58 3.56v6.85h-3.9V8.75z"/>
+                </svg>
+                LinkedIn ↗</a>
+            <a href="https://github.com/oruizramos" target="_blank" rel="noopener noreferrer" class="btn btn-ghost">
+                <svg class="btn-icon" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                    <path d="M12 2C6.48 2 2 6.58 2 12.2c0 4.49 2.87 8.3 6.84 9.64.5.1.68-.22.68-.49 0-.24-.01-1.04-.01-1.88-2.78.61-3.37-1.2-3.37-1.2-.45-1.17-1.11-1.48-1.11-1.48-.9-.63.07-.62.07-.62 1 .07 1.53 1.04 1.53 1.04.9 1.55 2.34 1.11 2.91.85.09-.66.35-1.11.63-1.36-2.22-.26-4.56-1.13-4.56-5.03 0-1.11.39-2.02 1.03-2.73-.1-.26-.45-1.3.1-2.71 0 0 .84-.27 2.75 1.04a9.4 9.4 0 0 1 5 0c1.91-1.31 2.75-1.04 2.75-1.04.55 1.41.2 2.45.1 2.71.64.71 1.03 1.62 1.03 2.73 0 3.91-2.34 4.77-4.57 5.02.36.32.68.94.68 1.9 0 1.37-.01 2.47-.01 2.81 0 .27.18.6.69.49A10.02 10.02 0 0 0 22 12.2C22 6.58 17.52 2 12 2z"/>
+                </svg>
+                GitHub ↗</a>
+        </div>
+    </div>
+</section>
+
+<footer>
+    <div class="wrap"><p>© 2026 Alejandro Ramos</p></div>
+</footer>
+
+<div id="imageModal" class="image-modal">
+    <span class="image-modal-close">&times;</span>
+    <img class="image-modal-content" id="modalImg" alt="">
+</div>
+
+<a href="#home" id="scrollTopBtn" class="scroll-top-btn" aria-label="Scroll to top">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"
+         stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+        <path d="M18 15l-6-6-6 6"/>
+    </svg>
+</a>
+
+<script src="script.js"></script>
+
+</body>
+</html>
