@@ -100,8 +100,41 @@
     }, {rootMargin: '-40% 0px -55% 0px'});
     sections.forEach(s => navIO.observe(s));
 
+    /* p3 image carousel */
+    const carouselTrack = document.getElementById('p3CarouselTrack');
+    const carouselSlides = document.querySelectorAll('#p3CarouselTrack .carousel-slide');
+    const prevBtn = document.getElementById('p3PrevBtn');
+    const nextBtn = document.getElementById('p3NextBtn');
+    const dotsContainer = document.getElementById('p3Dots');
+
+    if (carouselTrack && carouselSlides.length) {
+        let currentSlide = 0;
+
+        carouselSlides.forEach((_, i) => {
+            const dot = document.createElement('button');
+            dot.type = 'button';
+            dot.className = 'carousel-dot' + (i === 0 ? ' active' : '');
+            dot.setAttribute('aria-label', `Go to slide ${i + 1}`);
+            dot.addEventListener('click', () => goToSlide(i));
+            dotsContainer.appendChild(dot);
+        });
+        const dots = dotsContainer.querySelectorAll('.carousel-dot');
+
+        function goToSlide(index) {
+            currentSlide = Math.max(0, Math.min(index, carouselSlides.length - 1));
+            carouselTrack.style.transform = `translateX(-${currentSlide * 100}%)`;
+            dots.forEach((d, i) => d.classList.toggle('active', i === currentSlide));
+            prevBtn.disabled = currentSlide === 0;
+            nextBtn.disabled = currentSlide === carouselSlides.length - 1;
+        }
+
+        prevBtn.addEventListener('click', () => goToSlide(currentSlide - 1));
+        nextBtn.addEventListener('click', () => goToSlide(currentSlide + 1));
+        goToSlide(0);
+    }
+
     /* click-to-enlarge for finding chart screenshots */
-    document.querySelectorAll('.find-chart img, .dash-img').forEach(img => {
+    document.querySelectorAll('.find-chart img, .dash-img, .carousel-img').forEach(img => {
         img.addEventListener('click', () => {
             const modal = document.getElementById('imageModal');
             const modalImg = document.getElementById('modalImg');

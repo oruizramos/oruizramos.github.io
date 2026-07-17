@@ -22,7 +22,14 @@
             <span class="hero-logo-text">Alejandro<b> Ramos</b></span>
         </a>
         <div class="hero-links">
-            <a href="#p1">Projects</a>
+            <div class="nav-dropdown">
+                <a href="#p1">Projects</a>
+                <div class="nav-dropdown-menu">
+                    <a href="#p1">Deposit Policy Impact Analysis</a>
+                    <a href="#p2">Game Health Check</a>
+                    <a href="#p3">Seller Funnel &amp; Buyer Retention Analysis</a>
+                </div>
+            </div>
             <a href="#about">About</a>
             <a href="#contact">Contact</a>
         </div>
@@ -34,7 +41,10 @@
             <span class="nav-toggle-bar"></span>
         </button>
         <div class="mobile-nav" id="mobileNav" aria-hidden="true">
-            <a href="#p1">Projects</a>
+            <span class="mobile-nav-label">Projects</span>
+            <a href="#p1" class="mobile-nav-sub">Deposit Policy Impact Analysis</a>
+            <a href="#p2" class="mobile-nav-sub">Game Health Check</a>
+            <a href="#p3" class="mobile-nav-sub">Seller Funnel &amp; Buyer Retention Analysis</a>
             <a href="#about">About</a>
             <a href="#contact">Contact</a>
         </div>
@@ -60,7 +70,7 @@
 <!-- ============ PROJECT 1 —  ============ -->
 <section class="project" id="p1">
     <div class="wrap reveal">
-        <p class="proj-index">Unforgettable Experience Travel</p>
+        <p class="proj-index">Unforgettable Experience (Travel Agency)</p>
         <h2 class="proj-title">Deposit Policy Impact Analysis</h2>
         <p class="proj-tags">Data pipeline & validation <span> · </span> Natural experiment design
             <span>·</span> Diagnostic analysis</p>
@@ -68,7 +78,9 @@
         <div class="proj-top">
             <div>
                 <div class="block"><h4>Context</h4>
-                    <p>In August 2025, a small Guadalajara travel agency raised its required booking
+                    <p>In August 2025, <a href="https://www.unforgettableexperiencetravel.com/"
+                                          target="_blank" rel="noopener noreferrer">a small
+                        Guadalajara travel agency</a> raised its required booking
                         deposit from <b>20% to 50% non-refundable</b>, aiming to stop customers from
                         cancelling.</p>
                 </div>
@@ -118,12 +130,12 @@
             <div class="dash">
                 <!-- POWER BI: no live embed (licensing wall). Screenshot below, .pbix linked in repo. -->
                 <img class="dash-img" src="images/ue-dashboard-page2.png"
-                     alt="Power BI dashboard — Analysis page, showing the monthly cancellation breakdown, booking mix, lead-time risk chart, and channel audit table">
+                     alt="Power BI dashboard: Analysis page, showing the monthly cancellation breakdown, booking mix, lead-time risk chart, and channel audit table">
                 <p class="proj-tags dash-caption">Power BI Dashboard Screenshot *
                     Interactive file available below</p>
                 <div class="dash-foot">
-                    <div class="dash-stack"><span class="chip">Power BI</span><span
-                            class="chip">SQL</span><span class="chip">Python</span></div>
+                    <div class="dash-stack"><span class="chip">Python</span><span
+                            class="chip">SQL</span><span class="chip">Power BI</span></div>
                 </div>
                 <div class="dash-actions">
                     <a href="https://raw.githubusercontent.com/oruizramos/ue-deposit-cancelation-policy-data-analysis/main/uet-dashboard.pbix"
@@ -178,7 +190,7 @@
                     <li><b>2. Flexible deposit for custom trips, by trip type.</b><br>
                         Offer <b>20–30% upfront plus a structured payment plan</b> (e.g. a second
                         installment at 90 days before departure) specifically for weddings, XV años,
-                        and honeymoons — regardless of how far ahead they're booked. This recovers
+                        and honeymoons, regardless of how far ahead they're booked. This recovers
                         the premium customers the flat 50% rule deters, while the staged second
                         payment preserves commitment.
                     </li>
@@ -274,7 +286,7 @@
                             allowfullscreen></iframe>
                 </div>
                 <div class="dash-foot">
-                    <div class="dash-stack"><span class="chip">PostgreSQL</span><span
+                    <div class="dash-stack"><span class="chip">Excel</span><span
                             class="chip">SQL</span><span class="chip">Tableau</span></div>
                 </div>
                 <div class="dash-actions">
@@ -343,7 +355,7 @@
                 <div class="find"><p class="find-name">Attribution accuracy</p>
                     <div class="find-chart">
                         <img src="images/f2p-attribution-sql.png"
-                             alt="Screenshot of the SQL query comparing reported versus actual installs by channel — the source of the attribution-gap finding">
+                             alt="Screenshot of the SQL query comparing reported versus actual installs by channel, the source of the attribution-gap finding">
                     </div>
                     <p>Every paid acquisition channel over-reported installs by
                         <strong>10–13.5%</strong> versus
@@ -358,30 +370,253 @@
         <div class="recommendations">
             <h4>Recommendations</h4>
             <ul>
-                <li><strong>Rebalance Forge Frenzy's difficulty curve</strong> before its next run.
+                <li><strong>1. Rebalance Forge Frenzy's difficulty curve</strong> before its next
+                    run.
                     The churn spike
                     is event-specific, not category-wide
                 </li>
-                <li><strong>Reallocate influencer budget toward cross_promo and google_uac</strong>;
+                <li><strong>2. Reallocate influencer budget toward cross_promo and
+                    google_uac</strong>;
                     track ROAS by
                     channel monthly
                 </li>
-                <li><strong>Protect the top-30%-payer segment</strong> with retention/VIP treatment,
+                <li><strong>3. Protect the top-30%-payer segment</strong> with retention/VIP
+                    treatment,
                     since it drives
                     <strong>two-thirds of revenue</strong>, losing a handful of these players costs
                     more
                     than losing
                     hundreds of non-payers
                 </li>
-                <li><strong>Investigate the gems_mega purchase flow</strong> specifically (not gems
+                <li><strong>4. Investigate the gems_mega purchase flow</strong> specifically (not
+                    gems
                     generally) to
                     recover the €1,300 in refund leakage
                 </li>
-                <li><strong>Reconcile reported-vs-actual installs with ad partners</strong> before
+                <li><strong>5. Reconcile reported-vs-actual installs with ad partners</strong>
+                    before
                     setting CAC
                     targets, so acquisition cost isn't calculated on inflated numbers
                 </li>
             </ul>
+        </div>
+    </div>
+</section>
+
+<!-- ============ PROJECT 3 ============ -->
+<section class="project" id="p3">
+    <div class="wrap reveal">
+        <p class="proj-index">E-commerce Marketplace</p>
+        <h2 class="proj-title">Seller Funnel &amp; Buyer Retention Analysis</h2>
+        <p class="proj-tags">Funnel Analysis <span>·</span> Cohort &amp; Retention Analysis
+            <span>·</span> Data Quality Testing</p>
+
+        <div class="proj-top">
+            <div>
+                <div class="block"><h4>Context</h4>
+                    <p>Olist is a real Brazilian marketplace connecting ~3,000 third-party sellers
+                        to buyers across multiple sales channels, structurally similar to how
+                        Zalando or Amazon's marketplace programs work. This analysis combines two
+                        real datasets Olist itself released: <a
+                                href="https://www.kaggle.com/datasets/olistbr/brazilian-ecommerce"
+                                target="_blank" rel="noopener noreferrer">~100,000 e-commerce
+                            orders</a> and <a
+                                href="https://www.kaggle.com/datasets/olistbr/marketing-funnel-olist"
+                                target="_blank" rel="noopener noreferrer">8,000 seller-acquisition
+                            leads</a>, to look at both sides of the marketplace at once.</p>
+                </div>
+                <div class="block"><h4>The question</h4>
+                    <p>Which lead-acquisition channels and which kind of seller actually convert and
+                        succeed on the platform, and once a customer buys once, how likely are they
+                        to come back, and does what they bought first matter?
+                    </p>
+                </div>
+                <div class="block"><h4>Approach</h4>
+                    <ul>
+                        <li>Built a 9-table normalized <b>PostgreSQL schema</b> joining two
+                            separately-released real datasets via seller_id, modeling a full 3-stage
+                            funnel (lead → closed deal → activated seller)
+                        </li>
+                        <li>Wrote a <b>9-check automated data-quality suite</b>, catching and
+                            documenting two real pipeline bugs along the way rather than treating
+                            "it ran" as "it's correct"
+                        </li>
+                        <li>Used <b>Python (pandas, scipy)</b> for chi-square/Cramér's V
+                            significance testing on every headline claim, and power-law vs.
+                            exponential curve fitting for the retention decay
+                        </li>
+                    </ul>
+                </div>
+                <div class="block"><h4>Outcome</h4>
+                    <ul>
+                        <li>Seller type beats channel as a predictor of success: <b>resellers
+                            activate at 48.89% vs. 37.19%</b> for manufacturers, the strongest
+                            effect size in the whole analysis
+                        </li>
+                        <li>Conversion rate alone hides the real problem: <b>54.9% of closed
+                            deals</b> never resulted in a seller who made a single sale
+                        </li>
+                        <li>What a customer buys first predicts whether they come back: <b>home_appliances
+                            customers repeat at 9.14%</b>, roughly 3x the 3.05% baseline for every
+                            other category
+                        </li>
+                        <li>Data quality check/test discovered a dataset trap: grouping by the
+                            wrong customer-id
+                            column
+                            shows <b>0% repeat purchases</b>; the correct column shows <b>3.12%</b>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="dash">
+                <div class="dash-bar"><span class="dot"></span><span
+                        class="dot"></span><span class="dot"></span><span
+                        class="dash-label">gallery · 5 slides</span></div>
+
+                <div class="carousel" id="p3Carousel">
+                    <div class="carousel-track" id="p3CarouselTrack">
+                        <div class="carousel-slide"><img class="carousel-img"
+                                                         src="images/fig5_cohort_heatmap.png"
+                                                         alt="Cohort retention heatmap showing return-visit retention by acquisition month, week over week">
+                        </div>
+                        <div class="carousel-slide"><img class="carousel-img"
+                                                         src="images/fig7_channel_action_table.png"
+                                                         alt="Table mapping each acquisition channel to its recommended action">
+                        </div>
+                        <div class="carousel-slide"><img class="carousel-img"
+                                                         src="images/fig6_rfm_segments.png"
+                                                         alt="Bar chart of RFM customer segments by size, an exploratory appendix analysis">
+                        </div>
+                        <div class="carousel-slide"><img class="carousel-img"
+                                                         src="images/fig8_sql_snippet.png"
+                                                         alt="SQL query demonstrating the customer_id versus customer_unique_id data trap">
+                        </div>
+                        <div class="carousel-slide"><img class="carousel-img"
+                                                         src="images/fig9_python_snippet.png"
+                                                         alt="Python code computing the chi-square test and Cramér's V effect size for channel conversion">
+                        </div>
+                    </div>
+                    <button type="button" class="carousel-btn carousel-prev" id="p3PrevBtn"
+                            aria-label="Previous slide">←
+                    </button>
+                    <button type="button" class="carousel-btn carousel-next" id="p3NextBtn"
+                            aria-label="Next slide">→
+                    </button>
+                    <div class="carousel-dots" id="p3Dots"></div>
+                </div>
+
+                <div class="dash-foot">
+                    <div class="dash-stack"><span class="chip">Excel</span><span
+                            class="chip">SQL</span><span class="chip">Python</span></div>
+                </div>
+                <div class="dash-actions">
+                    <a href="https://docs.google.com/presentation/d/1V8bd9tqVmY9xv6SL1L-uFf7fQzzl2f4e/edit?usp=sharing&ouid=102682443240749831755&rtpof=true&sd=true"
+                       target="_blank" rel="noopener noreferrer" class="btn btn-primary">View slide
+                        deck ↗</a>
+                    <a href="https://github.com/oruizramos/funnel-cohort-retention-analysis"
+                       target="_blank" rel="noopener noreferrer" class="btn btn-ghost">View on
+                        GitHub ↗</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="findings">
+            <p class="findings-head">Key findings</p>
+            <div class="find-grid">
+                <div class="find"><p class="find-name">Seller Type Beats Channel</p>
+                    <div class="find-chart">
+                        <img src="images/fig11_activation_by_seller_type.png"
+                             alt="Bar chart comparing seller activation rate for resellers versus manufacturers">
+                    </div>
+                    <p>Resellers activate at <b>48.89% vs. 37.19%</b> for manufacturers (p=0.002),
+                        the strongest, most actionable lever in the whole analysis. Business segment
+                        matters even more: household_utilities and pet sellers activate 2x better
+                        than food or computers sellers.</p>
+                </div>
+                <div class="find"><p class="find-name">The Funnel Has 3 Stages, Not 2</p>
+                    <div class="find-chart">
+                        <img src="images/fig1_3stage_funnel.png"
+                             alt="Bar chart of the 3-stage seller funnel: leads, closed deals, and activated sellers">
+                    </div>
+                    <p>Conversion rate alone misses that <b>54.9% of closed deals</b> (462 of 842)
+                        never resulted in a seller who made a single sale. Evaluating a channel on
+                        lead-to-deal conversion alone would have missed this entirely.</p>
+                </div>
+                <div class="find"><p class="find-name">No Single Channel Metric Tells the Whole
+                    Story</p>
+                    <div class="find-chart">
+                        <img src="images/fig2_channel_comparison.png"
+                             alt="Grouped bar chart comparing lead-to-deal conversion and activation rate by acquisition channel">
+                    </div>
+                    <p>direct_traffic looks unremarkable on lead-to-deal conversion (11.22%) but has
+                        the fastest median close (10.6 days) and <b>highest activation rate
+                            (55.36%)</b> of any channel.</p>
+                </div>
+                <div class="find"><p class="find-name">What You Buy First Predicts If You'll
+                    Return</p>
+                    <div class="find-chart">
+                        <img src="images/fig10_repeat_rate_by_category.png"
+                             alt="Bar chart of repeat-purchase rate by first-purchase product category">
+                    </div>
+                    <p>Customers whose first purchase was home_appliances repeat at <b>9.14%</b>,
+                        roughly 3x the site-wide baseline (p&lt;0.001). Electronics and
+                        consoles_games are genuinely one-and-done categories.</p>
+                </div>
+                <div class="find"><p class="find-name">Repeat-Purchase Is Rare and Front-Loaded</p>
+                    <div class="find-chart">
+                        <img src="images/fig3_retention_curve.png"
+                             alt="Line chart of return-visit retention by month since first purchase, with a power-law decay curve fitted to the data">
+                    </div>
+                    <p>Monthly retention follows a power-law decay (R² = 0.78 vs. 0.59 for
+                        exponential). Only <b>0.48% return in month 1</b>, dropping to 0.30% by
+                        month 2, essentially all repeat-purchase signal happens fast or not at all.
+                    </p>
+                </div>
+                <div class="find"><p class="find-name">The customer_id Trap</p>
+                    <div class="find-chart">
+                        <img src="images/fig4_customer_id_trap.png"
+                             alt="Bar chart comparing repeat-purchase rate measured with the wrong versus the correct customer id column">
+                    </div>
+                    <p>Grouping repeat customers by the wrong ID column shows exactly <b>0%</b> ever
+                        return, by construction. The correct person-level column shows <b>3.12%</b>,
+                        a documented trap in the dataset's own dictionary, demonstrated live rather
+                        than just quietly avoided.</p>
+                </div>
+            </div>
+
+            <div class="recommendations">
+                <h4>Recommendations</h4>
+                <ul>
+                    <li><b>1. Recruit resellers, not manufacturers.</b><br>
+                        Target segments like household_utilities, pet, and sports_leisure
+                        specifically, the single strongest, most actionable lever found in this
+                        analysis.
+                    </li>
+                    <li><b>2. Feature home_appliances and fashion_bags_accessories to new
+                        customers.</b><br>
+                        These categories build a repeat customer base at 1.5–3x the site-wide rate,
+                        a merchandising decision, not a tracking fix.
+                    </li>
+                    <li><b>3. Scale direct_traffic and paid_search.</b><br>
+                        Both are genuinely strong across all 3 funnel stages, unlike raw lead volume
+                        alone would suggest.
+                    </li>
+                    <li><b>4. Refresh social's targeting and creative channel-wide.</b><br>
+                        Its weak conversion isn't concentrated in one landing page (checked
+                        directly, not statistically significant); the fix has to be channel-level,
+                        not a single-page swap.
+                    </li>
+                    <li><b>5. Deprioritize email and other_publicities.</b><br>
+                        Weak at every funnel stage and the lowest realized revenue of any channel
+                        tested.
+                    </li>
+                    <li><b>6. Front-load re-engagement to the first 30 days.</b><br>
+                        Essentially all repeat-purchase signal happens by month 1, regardless of
+                        category.
+                    </li>
+                </ul>
+            </div>
         </div>
     </div>
 </section>
