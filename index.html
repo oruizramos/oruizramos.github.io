@@ -28,6 +28,7 @@
                     <a href="#p1">Deposit Policy Impact Analysis</a>
                     <a href="#p2">Game Health Check</a>
                     <a href="#p3">Seller Funnel &amp; Buyer Retention Analysis</a>
+                    <a href="#p4">Adaptive Model Risk Monitoring</a>
                 </div>
             </div>
             <a href="#about">About</a>
@@ -45,6 +46,7 @@
             <a href="#p1" class="mobile-nav-sub">Deposit Policy Impact Analysis</a>
             <a href="#p2" class="mobile-nav-sub">Game Health Check</a>
             <a href="#p3" class="mobile-nav-sub">Seller Funnel &amp; Buyer Retention Analysis</a>
+            <a href="#p4" class="mobile-nav-sub">Adaptive Model Risk Monitoring</a>
             <a href="#about">About</a>
             <a href="#contact">Contact</a>
         </div>
@@ -450,8 +452,7 @@
                 <div class="block"><h4>Outcome</h4>
                     <ul>
                         <li>Seller type beats channel as a predictor of success: <b>resellers
-                            activate at 48.89% vs. 37.19%</b> for manufacturers, the strongest
-                            effect size in the whole analysis
+                            activate at 48.89% vs. 37.19%</b> for manufacturers.
                         </li>
                         <li>Conversion rate alone hides the real problem: <b>54.9% of closed
                             deals</b> never resulted in a seller who made a single sale
@@ -529,8 +530,8 @@
                         <img src="images/fig11_activation_by_seller_type.png"
                              alt="Bar chart comparing seller activation rate for resellers versus manufacturers">
                     </div>
-                    <p>Resellers activate at <b>48.89% vs. 37.19%</b> for manufacturers (p=0.002),
-                        the strongest, most actionable lever in the whole analysis. Business segment
+                    <p>Resellers activate at <b>48.89% vs. 37.19%</b> for manufacturers (p=0.002).
+                        Business segment
                         matters even more: household_utilities and pet sellers activate 2x better
                         than food or computers sellers.</p>
                 </div>
@@ -590,8 +591,7 @@
                 <ul>
                     <li><b>1. Recruit resellers, not manufacturers.</b><br>
                         Target segments like household_utilities, pet, and sports_leisure
-                        specifically, the single strongest, most actionable lever found in this
-                        analysis.
+                        specifically.
                     </li>
                     <li><b>2. Feature home_appliances and fashion_bags_accessories to new
                         customers.</b><br>
@@ -621,6 +621,256 @@
     </div>
 </section>
 
+<!-- ============ PROJECT 4 ============ -->
+<section class="project" id="p4">
+    <div class="wrap reveal">
+        <p class="proj-index">Machine Learning Operations</p>
+        <h2 class="proj-title">Adaptive Model Risk Monitoring</h2>
+        <p class="proj-subtitle">An end-to-end case study in statistical modeling,
+            feature engineering, and production model monitoring, using
+            professional esports data (League of Legends).</p>
+        <p class="proj-tags">Statistical Modeling <span>·</span> Calibration
+            <span>·</span> Drift Detection <span>·</span> Production Monitoring</p>
+
+        <div class="proj-top">
+            <div>
+                <div class="block"><h4>Context</h4>
+                    <p>I started this project to get real practice with <b>statistical
+                        modelling, ETL pipelines, and production-style monitoring</b>, the
+                        parts that get skipped once most tutorials manage to get a model
+                        to train. League of Legends, a game I've followed for years,
+                        turned out to be a strong sandbox: <a href="https://oracleselixir.com"
+                                                              target="_blank"
+                                                              rel="noopener noreferrer">Oracle's
+                            Elixir</a>
+                        publishes free, detailed match history, and the patch cycle gives
+                        a genuine, dateable point where the underlying process changes,
+                        exactly what a monitoring system needs to be tested against. What
+                        follows evaluates a win-probability model the way a deployed one
+                        would be evaluated: calibration testing, drift detection, variance
+                        analysis across a real regime change, and an automated rule
+                        flagging when performance needs review. Brier score improves from
+                        <b>0.230 to 0.116</b> as a match progresses, with calibration
+                        holding at every stage.</p>
+                </div>
+                <div class="block"><h4>What's under the hood</h4>
+                    <ul>
+                        <li>Pregame win-probability model (logistic regression,
+                            chronological train/test split, leakage checked line by line)
+                        </li>
+                        <li>In-play model re-scoring the same games at 10/15/20/25-minute
+                            checkpoints
+                        </li>
+                        <li>Drift detection anchored to a real patch boundary, not a
+                            calendar date
+                        </li>
+                        <li>An automated retrain-recommendation rule, walked forward
+                            patch by patch
+                        </li>
+                        <li>A per-prediction confidence/reliability flag, validated
+                            against real outcomes
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="dash">
+                <div class="dash-bar"><span class="dot"></span><span
+                        class="dot"></span><span class="dot"></span><span
+                        class="dash-label">calibration · 4 checkpoints</span></div>
+                <img class="dash-img" src="images/p4-calibration-panel.png"
+                     alt="Five-panel calibration comparison: pregame model plus in-play models at 10, 15, 20, and 25 minutes, all evaluated on the identical held-out test games">
+                <p class="proj-tags dash-caption">Calibration Panel, All Checkpoints *
+                    Full write-up in repo</p>
+                <div class="dash-foot">
+                    <div class="dash-stack"><span class="chip">Excel</span><span
+                            class="chip">Python</span><span
+                            class="chip">scikit-learn</span><span class="chip">SciPy</span><span
+                            class="chip">Feature Engineering</span><span
+                            class="chip">Win-Probability Modeling</span><span
+                            class="chip">Calibration</span><span
+                            class="chip">PSI/KS Drift Detection</span><span
+                            class="chip">Patch Analysis</span><span
+                            class="chip">Model Monitoring</span>
+                    </div>
+                </div>
+                <div class="dash-actions">
+                    <a href="https://github.com/oruizramos/adaptive-model-risk-monitoring-for-dynamic-prediction-systems"
+                       target="_blank" rel="noopener noreferrer" class="btn btn-primary">View on
+                        GitHub ↗</a>
+                    <a href="https://github.com/oruizramos/adaptive-model-risk-monitoring-for-dynamic-prediction-systems/blob/main/README.md"
+                       target="_blank" rel="noopener noreferrer" class="btn btn-ghost">Read the
+                        full write-up ↗</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="recommendations">
+            <h4>Distinguishing Drift From a False Alarm</h4>
+            <p>A monitoring metric spiked to <b>1.75</b>, roughly seven times the usual
+                threshold for a material shift. The cause wasn't a change in the
+                underlying data: that specific feature resets at the start of every
+                patch by construction, so its distribution is guaranteed to look
+                unstable across any patch boundary regardless of whether conditions
+                actually changed. Confirming that before treating the spike as real
+                drift avoided a false retraining trigger.</p>
+        </div>
+
+        <div class="findings">
+            <p class="findings-head">How I built it</p>
+            <div class="snippet-grid">
+                <div class="snippet-card">
+                    <img src="images/p4-snippet-feature-engineering.png"
+                         alt="Python function computing each team's rolling win rate using only prior games, via a shift(1) before the rolling window">
+                    <h4>Feature Engineering</h4>
+                    <p>The <code>.shift(1)</code> is the whole point. Without it, a
+                        team's rolling win rate would include the very game the model is
+                        trying to predict. Every feature in this project was checked
+                        against this same rule before it was allowed near the model.</p>
+                </div>
+                <div class="snippet-card">
+                    <img src="images/p4-snippet-drift-detection.png"
+                         alt="Python function computing the Population Stability Index between an expected and an actual distribution">
+                    <h4>Drift Detection</h4>
+                    <p>This ran clean and returned 1.75, about 7x the usual "materially
+                        shifted" threshold. It wasn't real drift: that specific feature
+                        resets every patch by construction, so it's guaranteed to look
+                        unstable regardless of whether the world changed. The math was
+                        right; the question it was pointed at wasn't.</p>
+                </div>
+                <div class="snippet-card">
+                    <img src="images/p4-snippet-monitoring-rule.png"
+                         alt="Python function returning a retrain-recommended, monitor-closely, or stable verdict based on PSI and Brier ratio thresholds">
+                    <h4>Monitoring</h4>
+                    <p>One patch got flagged "monitor closely" on input drift alone,
+                        even though the model performed better than baseline there.
+                        Drift and performance don't always move together; a rule that
+                        only watched one of them would have missed that.</p>
+                </div>
+                <div class="snippet-card">
+                    <img src="images/p4-snippet-reliability-flag.png"
+                         alt="Python functions labeling a prediction's confidence and reliability separately, based on probability distance from 0.5 and how much history backs the input">
+                    <h4>Reliability</h4>
+                    <p>A confident-looking 0.82 built on 3 games of history isn't as
+                        trustworthy as an equally confident 0.82 built on 10, even
+                        though the model reports them identically. This flag separates
+                        the two, and was validated against real outcomes rather than
+                        just asserted.</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="findings findings-results">
+            <p class="findings-head">Project findings</p>
+            <p class="findings-intro">Each row is one patch from the held-out test
+                period. The chart and table below show the same automated rule's
+                verdict for that patch, walked forward against the training
+                baseline rather than against the patch before it.</p>
+            <img class="dash-img findings-chart" src="images/p4-retrain-rule-chart.png"
+                 alt="Color-coded chart of the retrain-recommendation rule's verdict for each patch, showing Brier ratio and PSI against their monitoring thresholds">
+            <table class="findings-table">
+                <thead>
+                <tr>
+                    <th>Patch</th>
+                    <th>Games</th>
+                    <th>Brier</th>
+                    <th>Brier Ratio</th>
+                    <th>PSI</th>
+                    <th>Verdict</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr>
+                    <td>16.07</td>
+                    <td>151</td>
+                    <td>0.199</td>
+                    <td>0.877</td>
+                    <td>0.125</td>
+                    <td class="verdict-monitor">Monitor closely</td>
+                </tr>
+                <tr>
+                    <td>16.08</td>
+                    <td>668</td>
+                    <td>0.219</td>
+                    <td>0.963</td>
+                    <td>0.053</td>
+                    <td class="verdict-stable">Stable</td>
+                </tr>
+                <tr>
+                    <td>16.09</td>
+                    <td>727</td>
+                    <td>0.226</td>
+                    <td>0.992</td>
+                    <td>0.082</td>
+                    <td class="verdict-stable">Stable</td>
+                </tr>
+                <tr>
+                    <td>16.10</td>
+                    <td>758</td>
+                    <td>0.230</td>
+                    <td>1.012</td>
+                    <td>0.032</td>
+                    <td class="verdict-stable">Stable</td>
+                </tr>
+                <tr>
+                    <td>16.11</td>
+                    <td>376</td>
+                    <td>0.244</td>
+                    <td>1.075</td>
+                    <td>0.099</td>
+                    <td class="verdict-monitor">Monitor closely</td>
+                </tr>
+                <tr>
+                    <td>16.12</td>
+                    <td>18</td>
+                    <td>—</td>
+                    <td>—</td>
+                    <td>—</td>
+                    <td class="verdict-insufficient">Insufficient data</td>
+                </tr>
+                <tr>
+                    <td>16.13</td>
+                    <td>325</td>
+                    <td>0.234</td>
+                    <td>1.032</td>
+                    <td>0.122</td>
+                    <td class="verdict-monitor">Monitor closely</td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <div class="recommendations">
+            <h4>If This Were Production</h4>
+            <ul>
+                <li><b>1. Weight the in-play model more heavily as the match
+                    progresses.</b><br>
+                    Its discrimination is substantially stronger than the pregame
+                    model's; treat the pregame model as a starting point only, before
+                    more information becomes available.
+                </li>
+                <li><b>2. Audit any drift feature for construction-based instability
+                    before wiring it to an alert.</b><br>
+                    A metric can be computed correctly and still be pointed at the
+                    wrong thing, as the PSI false alarm above shows directly.
+                </li>
+                <li><b>3. Treat "monitor closely" as a real third state, not a binary
+                    switch.</b><br>
+                    Route it to human review instead of forcing every patch into
+                    retrain-or-ignore.
+                </li>
+            </ul>
+        </div>
+
+        <p class="proj-note">Data: Oracle's Elixir, real professional matches,
+            2025-2026. Betting-odds history was tested against a real provider and
+            found broken (its historical-odds endpoint returns empty results
+            despite its own documentation); this project relies on match data
+            only, and says so rather than papering over it. No dashboard: the
+            table and figures above carry that role by design.</p>
+    </div>
+</section>
+
 <!-- ============ ABOUT ============ -->
 <section class="about" id="about">
     <div class="wrap reveal">
@@ -645,10 +895,10 @@
                         <circle cx="12" cy="9.5" r="2.5"/>
                     </svg>
                     <span id="about-location" class="about-location-text">Cologne, Germany</span>
-                    <span class="chip about-lang-chip">EN · ES · DE</span>
                 </div>
                 <p>I've spent a career translating one thing into another: Spanish into English,
-                    game narrative systems into QA reports, art/mockups into functioning
+                    ideas into game design documentation, feature/functionality requirements into QA
+                    test cases, art/mockups into functioning
                     websites, and spreadsheets into decisions. Data analysis turned out to
                     be the same skill with better tools; SQL to ask the question properly, Python
                     to make sure the answer holds up (there's still a small thrill every time it

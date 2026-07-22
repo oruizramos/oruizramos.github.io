@@ -3,7 +3,9 @@
         'Data Cleaning',
         'Data Visualization',
         'Statistical Analysis',
-        'A/B Testing',
+        'Predictive Modeling',
+        'Model Monitoring',
+        'Natural Experiments',
         'Data QA',
         'Root-Cause Analysis',
         'Business Storytelling'
@@ -134,7 +136,7 @@
     }
 
     /* click-to-enlarge for finding chart screenshots */
-    document.querySelectorAll('.find-chart img, .dash-img, .carousel-img').forEach(img => {
+    document.querySelectorAll('.find-chart img, .dash-img, .carousel-img, .snippet-card img').forEach(img => {
         img.addEventListener('click', () => {
             const modal = document.getElementById('imageModal');
             const modalImg = document.getElementById('modalImg');

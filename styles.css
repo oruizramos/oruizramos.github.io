@@ -616,6 +616,18 @@
             #p2 .proj-top .dash {
                 order: 1;
             }
+
+            #p4 .proj-top {
+                grid-template-columns: 1.35fr .9fr;
+            }
+
+            #p4 .proj-top > div:first-child {
+                order: 2;
+            }
+
+            #p4 .proj-top .dash {
+                order: 1;
+            }
         }
 
         @media (max-width: 860px) {
@@ -863,6 +875,28 @@
             display: flex;
             flex-wrap: wrap;
             gap: 8px
+        }
+
+        #p4 .findings-intro {
+            color: var(--ink-soft);
+            font-size: .96rem;
+            margin-bottom: 20px;
+        }
+
+        #p4 .findings-results {
+            margin-top: 44px;
+        }
+
+        #p4 .findings-chart {
+            margin-bottom: 34px;
+        }
+
+        #p4 .recommendations {
+            margin-top: 44px;
+        }
+
+        #p4 .proj-note {
+            margin-top: 40px;
         }
 
         .dash-actions {
@@ -1296,3 +1330,161 @@
                 transform: none
             }
         }
+
+/* ---- Project 4: code-snippet grid ("How I Built It") ---- */
+.snippet-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 22px;
+}
+
+@media (max-width: 860px) {
+    .snippet-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+.snippet-card {
+    background: var(--panel);
+    border: 1px solid var(--line);
+    border-radius: var(--r);
+    padding: 22px;
+    transition: transform .14s, box-shadow .14s, border-color .14s;
+}
+
+.snippet-card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 10px 28px rgba(20, 24, 31, .07);
+    border-color: #d4d8d1;
+}
+
+.snippet-card img {
+    width: 100%;
+    border-radius: calc(var(--r) - 6px);
+    border: 1px solid var(--line);
+    cursor: zoom-in;
+    margin-bottom: 14px;
+}
+
+.snippet-card h4 {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: .74rem;
+    letter-spacing: .14em;
+    text-transform: uppercase;
+    color: var(--ink);
+    margin-bottom: 8px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.snippet-card h4::before {
+    content: "";
+    width: 18px;
+    height: 1px;
+    background: var(--signal);
+}
+
+.snippet-card p {
+    color: var(--ink-soft);
+    font-size: .96rem;
+}
+
+/* ---- Project 4: findings table ---- */
+.findings-chart {
+    margin-bottom: 24px;
+    border-radius: var(--r);
+}
+
+.findings-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: .94rem;
+}
+
+.findings-table th {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: .72rem;
+    letter-spacing: .1em;
+    text-transform: uppercase;
+    color: var(--ink-soft);
+    background: var(--signal-wash);
+    text-align: left;
+    padding: 10px 14px;
+}
+
+.findings-table th:first-child {
+    border-radius: var(--r) 0 0 0;
+}
+
+.findings-table th:last-child {
+    border-radius: 0 var(--r) 0 0;
+}
+
+.findings-table td {
+    padding: 10px 14px;
+    border-bottom: 1px solid var(--line);
+    color: var(--ink);
+    font-family: 'JetBrains Mono', monospace;
+}
+
+.findings-table td:last-child {
+    font-family: 'Space Grotesk', system-ui, sans-serif;
+    font-weight: 500;
+}
+
+.verdict-stable {
+    color: var(--ink-soft);
+}
+
+.verdict-monitor {
+    color: var(--signal);
+    font-weight: 600;
+}
+
+.verdict-insufficient {
+    color: var(--ink-soft);
+    font-style: italic;
+}
+
+@media (max-width: 620px) {
+    .findings-table {
+        font-size: .82rem;
+    }
+
+    .findings-table th,
+    .findings-table td {
+        padding: 8px 8px;
+    }
+}
+
+/* ---- Project 4: closing note ---- */
+.proj-note {
+    margin-top: 28px;
+    font-size: .86rem;
+    font-style: italic;
+    color: var(--ink-soft);
+}
+
+/* ---- Project 4: lede paragraph + prose inside a recommendations-style callout ---- */
+.proj-lede {
+    font-size: 1.08rem;
+    color: var(--ink);
+    margin-bottom: 26px;
+    line-height: 1.65;
+}
+
+.recommendations p {
+    color: var(--ink);
+    font-size: 1rem;
+    line-height: 1.6;
+}
+
+/* ---- Project 4: italic subtitle beneath the title ---- */
+.proj-subtitle {
+    font-style: italic;
+    color: var(--ink-soft);
+    font-size: 1.05rem;
+    margin-top: 8px;
+    margin-bottom: 4px;
+}
